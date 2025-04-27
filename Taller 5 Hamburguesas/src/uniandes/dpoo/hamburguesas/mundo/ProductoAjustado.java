@@ -26,8 +26,7 @@ public class ProductoAjustado implements Producto
      * Construye un nuevo producto ajustado a partir del producto base y sin modificaciones
      * @param productoBase El producto base que se va a ajustar
      */
-    public ProductoAjustado( ProductoMenu productoBase )
-    {
+    public ProductoAjustado( ProductoMenu productoBase ){
         this.productoBase = productoBase;
         agregados = new ArrayList<Ingrediente>( );
         eliminados = new ArrayList<Ingrediente>( );
@@ -38,14 +37,25 @@ public class ProductoAjustado implements Producto
     {
         return productoBase.getNombre( );
     }
-    
-    
+        
     public void setIngredienteAdicional(Ingrediente ingrediente) {
     	agregados.add(ingrediente);
     }
     
     public void removeIngrediente(Ingrediente ingrediente) {
     	eliminados.add(ingrediente);
+    	if (agregados.contains(ingrediente)) {
+    		agregados.remove(ingrediente);
+    		
+    	}	
+    }
+    
+    public ArrayList<Ingrediente> getIngredientesAgregados(){
+    	return this.agregados;  	
+    }
+    
+    public ArrayList<Ingrediente> getIngredientesEliminados(){
+    	return this.eliminados;
     }
 
     /**
@@ -72,7 +82,7 @@ public class ProductoAjustado implements Producto
     public String generarTextoFactura( )
     {
         StringBuffer sb = new StringBuffer( );
-        sb.append( productoBase );
+        sb.append( productoBase.getNombre() );
         for( Ingrediente ing : agregados )
         {
             sb.append( "    +" + ing.getNombre( ) );
