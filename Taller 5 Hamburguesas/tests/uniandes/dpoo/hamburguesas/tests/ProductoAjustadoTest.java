@@ -15,7 +15,6 @@ public class ProductoAjustadoTest {
 	private Ingrediente ingrediente1;
 	private Ingrediente ingrediente2;
 	private Ingrediente ingrediente3;
-	private 
     @BeforeEach
     void setUp( ) throws Exception
     {   hamburguesa = new ProductoMenu("Hamburguesa Mexicana", 25000);
