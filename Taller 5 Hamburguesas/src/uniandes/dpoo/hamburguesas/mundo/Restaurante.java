@@ -98,7 +98,7 @@ public class Restaurante
      */
     public void cerrarYGuardarPedido( ) throws NoHayPedidoEnCursoException, IOException
     {
-        if( pedidoEnCurso == null )
+       if( pedidoEnCurso == null )
             throw new NoHayPedidoEnCursoException( );
 
         String nombreArchivo = PREFIJO_FACTURAS + pedidoEnCurso.getIdPedido( ) + ".txt";
