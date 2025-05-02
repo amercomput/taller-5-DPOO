@@ -1,0 +1,9 @@
+Cliente: Cliente1
+Dirección: Dir1
+----------------
+Hamburguesa
+            25000
+----------------
+Precio Neto:  25000
+IVA:          4750
+Precio Total: 29750
